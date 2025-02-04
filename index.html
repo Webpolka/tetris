@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <style>html { opacity: 0; }</style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Главная</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">  
+  
+  <link rel="stylesheet" href="./css/main.min.css">
+  
+</head>
+ 
+ 
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="page">
+      <div class="container">
+    <div class="game opacity-hidden">
+        <div class="game-area">
+            <div class="glass" id="glass"></div>
+            <div class="glass-touch"></div>
+        </div>
+        <div class="game-tablo">
+            <div class="next">
+                <div class="next-window">
+                    <span class="title">Карман</span>
+                    <div class="next-wrap">
+                        <div class="next-figure"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info">
+                <div class="info-block score">
+                    <span>Очки</span>
+                    <span class="count count-score">0</span>
+                </div>
+                <div class="info-block level">
+                    <span>Уровень</span>
+                    <span class="count count-level">1</span>
+                </div>
+                <div class="info-block pause" id="pause">
+                    <span>Пауза</span>
+                </div>
+            </div>
+
+            <div class="music">
+                <div class="music-window">
+                    <span id="music">Музыка</span>                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<audio src="../../static/swipe.mp3" id="swipe"></audio>
+<audio src="../../static/figure-lay.mp3" id="figure-lay"></audio>
+<audio src="../../static/line-down.mp3" id="line-down"></audio>
+<audio src="../../static/tetris-theme.mp3" id="game-music"></audio>
+<audio src="../../static/victory.mp3" id="victory"></audio>
+<audio src="../../static/lost.mp3" id="lost"></audio>
+
+    </main>
+    
+<footer class="footer"></footer>
+  </div>
+  <script src="./js/main.min.js"></script>
+
+</body>
+
+</html>
