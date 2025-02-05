@@ -5020,6 +5020,42 @@ body {
   color: white;
 }
 
+.rotat {
+  animation: rotat 1s;
+}
+
+.bounce {
+  animation: bounce 1s;
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+}
+@keyframes rotat {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  40% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  80% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
 .header {
   background-color: var(--color-bg-header);
 }
@@ -5035,11 +5071,32 @@ body {
   }
 }
 
+#kreml {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url("../images/kreml.jpg");
+  background-position: center center; /* x y */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#kreml:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
 .popup {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 25%;
+  width: 18.75rem;
   height: 25%;
   transform: translate(-50%, -50%) scale(0);
   transition: all 0.5s ease-in-out;
@@ -5047,9 +5104,6 @@ body {
   visibility: hidden;
   opacity: 0;
   background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .popup.popup--show {
   z-index: 100;
@@ -5057,21 +5111,86 @@ body {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
+.popup .tetris {
+  position: absolute;
+  top: -80%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+@media (max-width: 320px) {
+  .popup .tetris {
+    gap: 0.5rem;
+  }
+}
+@media (min-width: 567px) {
+  .popup .tetris {
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .popup .tetris {
+    gap: 3rem;
+  }
+}
+@media (min-width: 992px) {
+  .popup .tetris {
+    gap: 5rem;
+  }
+}
+.popup .tetris .t {
+  font-size: 8rem;
+  color: red;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.popup .tetris .e {
+  margin-top: 1rem;
+  font-size: 5rem;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.popup .tetris .tt {
+  font-size: 6rem;
+  color: violet;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.popup .tetris .r {
+  margin-top: 1.5rem;
+  font-size: 6rem;
+  color: rgb(131, 250, 88);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.popup .tetris .i {
+  margin-top: 1.2rem;
+  font-size: 5rem;
+  color: yellow;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.popup .tetris .s {
+  font-size: 7rem;
+  color: rgb(83, 49, 250);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
 .popup .popupBtn {
   text-align: center;
-  padding: 3.125rem;
+  padding: 1.25rem;
   background-color: rgb(0, 0, 128);
   border-radius: 10px;
   color: white;
-  font-size: 5rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 5px 1px #0099fd;
   cursor: pointer;
+  margin-top: 6rem;
 }
 @media (max-width: 320px) {
   .popup .popupBtn {
-    font-size: 3rem;
+    font-size: 1.8rem;
     padding: 1.5625rem;
   }
 }
